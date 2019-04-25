@@ -1,0 +1,24 @@
+<h3>Agregar</h3>
+<form (ngSubmit)="agregarPersona(formA)" #formA="ngForm">
+<input name="nombre" ngModel>
+<input name="apellido" ngModel>
+<button type="submit">Subir</button>
+</form>
+<h3>Editar</h3>
+<form (ngSubmit)="editarPersona(formC)" #formC="ngForm">
+<input name="nombre" ngModel>
+<input name="apellido" ngModel>
+<button type="submit">Editar</button>
+</form>
+<h3>Buscar</h3>
+<form (ngSubmit)="buscarPersona(formB)" #formB="ngForm">
+<input name="nombre" ngModel>
+<button type="submit">Buscar</button>
+</form>
+<p *ngIf="usuario">{{usuario.id}}, {{usuario.nombre}}, {{usuario.apellido}}<p>
+<button (click)="eliminarPersona()">Borrar</button>
+<ul>
+  <li *ngFor="let usu of usuarios">
+    {{usu.nombre}}
+  </li>
+</ul>
